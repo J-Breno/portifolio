@@ -1,0 +1,25 @@
+import Image from "next/image";
+
+export function Banner() {
+    return (
+        <>
+        <section
+      className="relative h-[600px] w-[1280px] mx-auto rounded-lg 
+                 bg-[url('/img/banner1.jpg')] bg-cover bg-center
+                 before:absolute before:inset-0 
+                 before:bg-gradient-to-t before:from-black/90 before:via-black/0 before:to-transparent"
+    >
+            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/0 to-black/0" />
+
+            <Image
+                src="https://github.com/j-breno.png"
+                alt="Foto de perfil"
+                width={250}
+                height={250}
+                className="absolute top-6 left-6 w-[250px] h-[250px] rounded-full border-2 border-[#FFAE00] shadow-lg"
+            />
+
+        </section>
+        </>
+    ) 
+}

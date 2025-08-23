@@ -10,7 +10,6 @@ export default function Header() {
                 className="transition-colors duration-300 hover:text-[#FFAE00] px-1"
               >
                 {item}
-                {/* Linha animada */}
                 <span className="absolute left-0 bottom-0 h-[2px] w-0 bg-[#FFAE00] transition-all duration-500 group-hover:w-full"></span>
               </a>
             </li>

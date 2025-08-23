@@ -1,6 +1,5 @@
-"use client"; 
+"use client";
 
-import { useEffect, useState } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -15,17 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
     <html lang="en">
-      <body
-        className={mounted ? `${geistSans.variable} ${geistMono.variable} antialiased` : "antialiased"}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
