@@ -8,7 +8,7 @@ export default function Skills() {
                   <div className="h-[60px] flex items-center px-4 bg-gradient-to-r from-black/95 to-transparent">
                     <h2 className="text-4xl font-bold text-white">Habilidades</h2>
                   </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4 py-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 p-4 py-6">
                         <div className="group flex flex-col items-center justify-center bg-gray-700 rounded-lg p-4 shadow-inner shadow-black/50 hover:shadow-[inset_0_0_15px_2px_rgba(255,255,255,0.2)] transition-shadow duration-300 cursor-pointer">
                             <FileHtmlIcon weight="regular" size={50} className="text-white group-hover:text-red-600 transition-colors duration-300 cursor-pointer"></FileHtmlIcon>
                         <span className="text-white font-semibold">HTML</span>

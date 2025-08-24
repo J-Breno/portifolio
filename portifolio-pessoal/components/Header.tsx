@@ -2,7 +2,7 @@ export default function Header() {
   return (
     <header className="h-[60px] w-full bg-gradient-to-r from-[#2C2E45] to-[#545D70] flex items-center justify-center rounded-t-lg">
       <nav>
-        <ul className="flex gap-8 text-white font-semibold">
+        <ul className="flex sm:gap-8 text-white  sm:font-semibold">
           {["HOME", "SKILLS", "ABOUT", "PROJECTS", "CONTACT"].map((item) => (
             <li key={item} className="relative group">
               <a
