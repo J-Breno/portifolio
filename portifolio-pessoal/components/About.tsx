@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export function About() {
   return (
-    <section id="sobre" className="w-full">
+    <section id="about" className="w-full">
       <div className="h-[60px] flex items-center px-4 bg-gradient-to-r from-black/95 to-transparent">
         <h2 className="text-4xl font-bold text-white">Sobre mim</h2>
       </div>
@@ -26,7 +26,7 @@ export function About() {
             rel="noopener noreferrer"
           >
             <Image
-                 src="img/github.svg"
+                 src="img/contact/github.svg"
                 alt="Logo do github"
                 width={50}
                 height={50}
@@ -37,7 +37,7 @@ export function About() {
             rel="noopener noreferrer"
           >
             <Image
-                 src="img/linkedin.svg"
+                 src="img/contact/linkedin.svg"
                 alt="Logo do Linkedin"
                 width={50}
                 height={50}
@@ -48,7 +48,7 @@ export function About() {
             rel="noopener noreferrer"
           >
             <Image
-                 src="img/instagram.svg"
+                 src="img/contact/instagram.svg"
                 alt="Logo do Instagram"
                 width={50}
                 height={50}
