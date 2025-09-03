@@ -10,8 +10,11 @@ import { ChevronUpIcon } from "lucide-react";
 
 export default function Home() {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
+    
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 500);
     };
@@ -27,23 +30,25 @@ export default function Home() {
   return (
     <>
       <div className="w-full min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
-        <div className="fixed inset-0 overflow-hidden pointer-events-none">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-[#FFAE00]/30 rounded-full animate-float"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                animationDelay: `${i * 2}s`,
-                animationDuration: `${15 + Math.random() * 10}s`
-              }}
-            />
-          ))}
-          
-          <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#FFAE00]/10 to-transparent opacity-20"></div>
-          <div className="absolute bottom-0 right-0 w-full h-1/3 bg-gradient-to-t from-[#FFAE00]/10 to-transparent opacity-20"></div>
-        </div>
+        {isClient && (
+          <div className="fixed inset-0 overflow-hidden pointer-events-none">
+            {[...Array(20)].map((_, i) => (
+              <div
+                key={i}
+                className="absolute w-1 h-1 bg-[#FFAE00]/30 rounded-full animate-float"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                  animationDelay: `${i * 2}s`,
+                  animationDuration: `${15 + Math.random() * 10}s`
+                }}
+              />
+            ))}
+            
+            <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-[#FFAE00]/10 to-transparent opacity-20"></div>
+            <div className="absolute bottom-0 right-0 w-full h-1/3 bg-gradient-to-t from-[#FFAE00]/10 to-transparent opacity-20"></div>
+          </div>
+        )}
 
         <Header />
 
@@ -52,11 +57,8 @@ export default function Home() {
           
           <div className="space-y-0">
             <About />
-            
             <Skills />
-            
             <Projects />
-            
             <Contact />
           </div>
         </main>
@@ -75,23 +77,11 @@ export default function Home() {
         <footer className="relative z-10 py-12 text-center text-gray-400 bg-gray-900/80 backdrop-blur-md border-t border-gray-700/30 mt-20">
           <div className="container mx-auto px-4">
             <p className="text-sm">
-              © {new Date().getFullYear()} João Breno. Desenvolvido com Typescript, Next.js, Tailwind CSS e PHP.
+              © {new Date().getFullYear()} João Breno. Desenvolvido com React, Next.js e Tailwind CSS.
             </p>
             <p className="text-xs mt-2 text-gray-500">
               Todos os direitos reservados.
             </p>
-            
-            <div className="flex justify-center gap-4 mt-4">
-              {['GitHub', 'LinkedIn', 'Instagram'].map((social) => (
-                <a
-                  key={social}
-                  href="#"
-                  className="text-gray-400 hover:text-[#FFAE00] transition-colors duration-300 text-sm"
-                >
-                  {social}
-                </a>
-              ))}
-            </div>
           </div>
         </footer>
 

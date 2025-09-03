@@ -1,6 +1,13 @@
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export function Banner() {
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
+
     return (
         <section className="relative min-h-screen w-full overflow-hidden">
             <div className="absolute inset-0">
@@ -9,25 +16,27 @@ export function Banner() {
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-black/50 to-black"></div>
             </div>
 
-            <div className="absolute inset-0">
-                {[...Array(15)].map((_, i) => (
-                    <div
-                        key={i}
-                        className="absolute w-1 h-1 bg-[#FFAE00] rounded-full animate-float"
-                        style={{
-                            left: `${Math.random() * 100}%`,
-                            top: `${Math.random() * 100}%`,
-                            animationDelay: `${i * 0.5}s`,
-                            animationDuration: `${3 + Math.random() * 2}s`
-                        }}
-                    ></div>
-                ))}
-                
-                <div className="absolute inset-0 opacity-20">
-                    <div className="absolute top-1/4 left-1/4 w-px h-20 bg-[#FFAE00]"></div>
-                    <div className="absolute top-1/3 right-1/4 w-20 h-px bg-[#FFAE00]"></div>
+            {isClient && (
+                <div className="absolute inset-0">
+                    {[...Array(15)].map((_, i) => (
+                        <div
+                            key={i}
+                            className="absolute w-1 h-1 bg-[#FFAE00] rounded-full animate-float"
+                            style={{
+                                left: `${Math.random() * 100}%`,
+                                top: `${Math.random() * 100}%`,
+                                animationDelay: `${i * 0.5}s`,
+                                animationDuration: `${3 + Math.random() * 2}s`
+                            }}
+                        ></div>
+                    ))}
+                    
+                    <div className="absolute inset-0 opacity-20">
+                        <div className="absolute top-1/4 left-1/4 w-px h-20 bg-[#FFAE00]"></div>
+                        <div className="absolute top-1/3 right-1/4 w-20 h-px bg-[#FFAE00]"></div>
+                    </div>
                 </div>
-            </div>
+            )}
 
             <div className="relative z-10 container mx-auto px-4 min-h-screen flex items-center justify-center">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full max-w-6xl">
